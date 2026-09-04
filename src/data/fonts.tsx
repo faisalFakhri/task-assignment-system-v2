@@ -1,0 +1,18 @@
+export const fonts = [
+  { label: 'Inter', value: 'Inter, system-ui, sans-serif', category: 'Google' },
+  { label: 'Roboto', value: 'Roboto, Arial, sans-serif', category: 'Google' },
+  { label: 'Poppins', value: 'Poppins, Arial, sans-serif', category: 'Google' },
+  { label: 'Open Sans', value: '"Open Sans", Arial, sans-serif', category: 'Google' },
+  { label: 'Lato', value: 'Lato, Arial, sans-serif', category: 'Google' },
+  { label: 'Montserrat', value: 'Montserrat, Arial, sans-serif', category: 'Google' },
+  { label: 'Nunito', value: 'Nunito, Arial, sans-serif', category: 'Google' },
+  { label: 'Work Sans', value: '"Work Sans", Arial, sans-serif', category: 'Google' },
+  { label: 'SF Pro', value: '-apple-system, BlinkMacSystemFont, sans-serif', category: 'System' },
+  { label: 'Segoe UI', value: '"Segoe UI", Arial, sans-serif', category: 'System' },
+  { label: 'Ubuntu', value: 'Ubuntu, Arial, sans-serif', category: 'System' },
+  { label: 'Helvetica Neue', value: '"Helvetica Neue", Arial, sans-serif', category: 'System' },
+  { label: 'Arial', value: 'Arial, sans-serif', category: 'System' },
+  { label: 'Courier Prime', value: '"Courier Prime", monospace', category: 'Local' },
+  { label: 'Bell Centennial', value: '"Bell Centennial", monospace', category: 'Local proprietary' },
+  { label: 'Retina MicroPlus', value: '"Retina MicroPlus", monospace', category: 'Local proprietary' },
+] as const

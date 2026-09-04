@@ -6,7 +6,7 @@ export default function AppLayout() {
   const [walkerOn, setWalkerOn] = useState<boolean>(() => {
     try {
       const v = localStorage.getItem('footer_walker_enabled')
-      return v === null ? false : v === '1' // OFF by default
+      return v === null ? false : v === '1'
     } catch {
       return false
     }
@@ -20,8 +20,7 @@ export default function AppLayout() {
   }, [walkerOn])
 
   return (
-    <div className="flex h-screen bg-[#020617] text-slate-100 overflow-hidden">
-      {/* Sidebar */}
+    <div className="flex h-screen bg-[#0a0f1a] text-slate-100 overflow-hidden">
       <aside className="hidden md:flex flex-col w-64 glass-strong shrink-0 overflow-y-auto">
         <div className="p-4 border-b border-white/10">
           <h1 className="text-sm font-mono font-semibold text-violet-300">Task Assignment</h1>
@@ -47,11 +46,10 @@ export default function AppLayout() {
         </nav>
       </aside>
 
-      {/* Main */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        <header className="flex h-12 items-center justify-between gap-3 px-4 md:px-6 shrink-0 border-b border-white/5">
+        <header className="flex h-12 items-center justify-between gap-3 px-4 md:px-6 shrink-0 border-b border-white/5 glass-subtle">
           <div className="text-xs font-mono text-slate-400 truncate">
-            Internal Task &amp; Assignment Management
+            Internal Task & Assignment Management
           </div>
         </header>
 

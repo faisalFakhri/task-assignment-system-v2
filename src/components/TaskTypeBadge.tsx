@@ -4,8 +4,8 @@ import type { Task } from '../types'
 export default function TaskTypeBadge({ type }: { type: Task['type'] }) {
   const color =
     type === 'Bugs'
-      ? 'bg-rose-400/10 text-rose-300 border-rose-400/20'
-      : 'bg-cyan-400/10 text-cyan-300 border-cyan-400/20'
+      ? 'bg-rose-500/20 text-rose-300 border-rose-400/30'
+      : 'bg-cyan-500/20 text-cyan-300 border-cyan-400/30'
 
   return (
     <span

@@ -6,7 +6,7 @@ export default function EmptyState({
 }: {
   title?: string
   description?: string
-}> {
+}) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 py-12 text-center">
       <div className="text-4xl">📭</div>

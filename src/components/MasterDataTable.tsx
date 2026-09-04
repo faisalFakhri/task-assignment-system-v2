@@ -61,7 +61,6 @@ export default function MasterDataTable({ entity, title, entityLabel }: Props) {
   const handleDelete = async (item: MasterDataType) => {
     if (!confirm(`Deactivate "${item.name}"? (soft delete)`)) return
     try {
-      // @todo: soft delete later — for now, hard delete
       await remove(item.id)
     } catch (e: any) {
       alert(e?.message || 'Failed to delete')
@@ -84,7 +83,7 @@ export default function MasterDataTable({ entity, title, entityLabel }: Props) {
         </div>
         <button
           onClick={openCreate}
-          className="inline-flex items-center rounded-full bg-white px-4 py-1.5 text-xs font-medium text-slate-900 hover:bg-white/90 font-mono shrink-0"
+          className="inline-flex items-center rounded-full bg-violet-500/20 px-4 py-1.5 text-xs font-medium text-violet-300 hover:bg-violet-500/30 font-mono shrink-0 border border-violet-400/30"
         >
           + Add {entityLabel}
         </button>
@@ -95,13 +94,13 @@ export default function MasterDataTable({ entity, title, entityLabel }: Props) {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder={`Search ID / name ${entityLabel.toLowerCase()}...`}
-          className="w-full max-w-sm rounded-xl glass-subtle px-3 py-2 text-xs font-mono placeholder:text-slate-500 text-slate-800 border border-slate-300 focus:outline-none focus:border-slate-400"
+          className="w-full max-w-sm rounded-xl glass-subtle px-3 py-2 text-xs font-mono placeholder:text-slate-500 text-slate-200 border border-slate-700 focus:outline-none focus:border-slate-500"
         />
       </div>
 
       <div className="glass rounded-2xl overflow-hidden">
         <table className="min-w-full divide-y divide-white/5 text-left text-xs font-mono">
-          <thead className="bg-slate-800/50">
+          <thead className="bg-white/5">
             <tr className="text-slate-400">
               <th className="px-4 py-2.5 font-medium">ID</th>
               <th className="px-4 py-2.5 font-medium">Name</th>
@@ -125,7 +124,7 @@ export default function MasterDataTable({ entity, title, entityLabel }: Props) {
                     <span
                       className={`inline-flex rounded-full px-2 py-0.5 text-[10px] font-medium border ${
                         row.active
-                          ? 'bg-emerald-400/15 text-emerald-300 border-emerald-400/20'
+                          ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30'
                           : 'bg-slate-700/30 text-slate-400 border-slate-600/30'
                       }`}
                     >
@@ -136,21 +135,21 @@ export default function MasterDataTable({ entity, title, entityLabel }: Props) {
                     <button
                       onClick={() => handleToggle(row)}
                       title={row.active ? 'Deactivate' : 'Activate'}
-                      className="rounded-full glass-subtle px-2.5 py-1 text-[11px] text-slate-400 hover:text-slate-200 border border-slate-600"
+                      className="rounded-full glass-subtle px-2.5 py-1 text-[11px] text-slate-400 hover:text-slate-200 border border-slate-700"
                     >
                       {row.active ? '⏸ Off' : '▶ On'}
                     </button>
                     <button
                       onClick={() => openEdit(row)}
                       title="Edit"
-                      className="rounded-full glass-subtle px-2.5 py-1 text-[11px] text-slate-400 hover:text-slate-200 border border-slate-600"
+                      className="rounded-full glass-subtle px-2.5 py-1 text-[11px] text-slate-400 hover:text-slate-200 border border-slate-700"
                     >
                       ✎ Edit
                     </button>
                     <button
                       onClick={() => handleDelete(row)}
                       title="Delete"
-                      className="rounded-full bg-red-500/15 border border-red-400/20 px-2.5 py-1 text-[11px] text-red-300 hover:bg-red-500/20"
+                      className="rounded-full bg-red-500/20 border border-red-400/30 px-2.5 py-1 text-[11px] text-red-300 hover:bg-red-500/30"
                     >
                       ✕ Hapus
                     </button>
@@ -176,20 +175,20 @@ export default function MasterDataTable({ entity, title, entityLabel }: Props) {
                 onChange={(e) => setFormName(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
                 placeholder={`Nama ${entityLabel.toLowerCase()}`}
-                className="mt-1 w-full rounded-xl glass-subtle px-3 py-2.5 text-sm font-mono text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-slate-400 border border-slate-600"
+                className="mt-1 w-full rounded-xl glass-subtle px-3 py-2.5 text-sm font-mono text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-slate-500 border border-slate-700"
               />
             </label>
             <div className="mt-5 flex justify-end gap-2">
               <button
                 onClick={() => setModalOpen(false)}
-                className="rounded-full glass-subtle px-4 py-1.5 text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-600"
+                className="rounded-full glass-subtle px-4 py-1.5 text-xs font-mono text-slate-400 hover:text-slate-200 border border-slate-700"
               >
                 Batal
               </button>
               <button
                 onClick={handleSubmit}
                 disabled={submitting || !formName.trim()}
-                className="rounded-full bg-white px-4 py-1.5 text-xs font-mono font-semibold text-slate-900 hover:bg-white/90 disabled:opacity-50"
+                className="rounded-full bg-violet-500/20 px-4 py-1.5 text-xs font-mono font-semibold text-violet-300 hover:bg-violet-500/30 border border-violet-400/30 disabled:opacity-50"
               >
                 {submitting ? '...menyimpan' : editing ? 'Simpan' : 'Tambah'}
               </button>

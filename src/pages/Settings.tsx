@@ -13,7 +13,7 @@ export default function Settings() {
 
       <div className="glass-strong rounded-2xl p-4">
         <h2 className="text-sm font-semibold font-mono text-slate-300 mb-2">Footer Walker</h2>
-        <p className="text-xs font-mono text-slate-400 mb-3">
+        <p className="text-xs font-mono text-slate-500 mb-3">
           Toggle a little cat at footer (OFF by default for performance).
         </p>
         <FooterWalker />

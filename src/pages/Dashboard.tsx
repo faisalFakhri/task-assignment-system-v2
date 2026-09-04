@@ -4,7 +4,7 @@ export default function Dashboard() {
   return (
     <div className="space-y-4 max-w-4xl">
       <h1 className="text-lg font-medium font-mono text-slate-200">Dashboard</h1>
-      <p className="text-sm font-mono text-slate-400">
+      <p className="text-sm font-mono text-slate-500">
         Project v2 — clean rebuild in progress.
       </p>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

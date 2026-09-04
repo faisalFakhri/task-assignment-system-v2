@@ -27,7 +27,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
-          base_url: /task-assignment-system/
+          base_url: /task-assignment-system-v2/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -36,11 +36,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs:
-      provider: static
+    environment: github-pages
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

@@ -1,5 +1,0 @@
-# For more control over this file, run supabase [init] in the project root.
-# Docs: https://supabase.com/docs/guides/functions
-
-[functions.sync-to-sheets]
-path = "supabase/functions/sync-to-sheets"
